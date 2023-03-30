@@ -1,0 +1,11 @@
+.container {
+  padding: 2rem;
+}
+
+.book-item:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.item__thumbnail-image {
+  width: 50%;
+}

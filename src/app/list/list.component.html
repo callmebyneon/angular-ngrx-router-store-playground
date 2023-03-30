@@ -1,0 +1,21 @@
+<div class="container">
+  <table *ngIf="books$ | async as books">
+    <tr *ngFor="let book of books" class="book-item">
+      <td>
+        <img
+          class="item__thumbnail-image"
+          [src]="book.volumeInfo.imageLinks.smallThumbnail"
+          alt="{{ book.volumeInfo.title }}, {{
+            book.volumeInfo.authors.join(' | ')
+          }}"
+        />
+      </td>
+      <td>
+        <a [routerLink]="book.id">
+          <p>{{ book.volumeInfo.title }}</p>
+          <p>{{ book.volumeInfo.authors.join(' | ') }}</p>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>

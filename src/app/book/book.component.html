@@ -1,0 +1,12 @@
+<div class="container">
+  <button type="button" (click)="goBack()">←</button>
+  <h2>Book Information</h2>
+
+  <div *ngIf="book$ | async as book">
+    <app-book-info [book]="book"></app-book-info>
+  </div>
+
+  <div *ngIf="bookInfo as book">
+    <app-book-info [book]="book"></app-book-info>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<img
+  [src]="book.volumeInfo.imageLinks.smallThumbnail"
+  alt="{{ book.volumeInfo.title }}, {{ book.volumeInfo.authors.join(' | ') }}"
+/>
+<p>
+  {{ book.volumeInfo.title }}
+  <small *ngIf="book.volumeInfo.subtitle">
+    {{ book.volumeInfo.subtitle }}
+  </small>
+</p>
+<p>{{ book.volumeInfo.authors.join(' | ') }}</p>
+<p>{{ book.volumeInfo.description }}</p>
