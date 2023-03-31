@@ -9,4 +9,4 @@
   </small>
 </p>
 <p>{{ book.volumeInfo.authors.join(' | ') }}</p>
-<p>{{ book.volumeInfo.description }}</p>
+<p [innerHTML]="book.volumeInfo.description"></p>
