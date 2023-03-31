@@ -2,11 +2,15 @@
   <button type="button" (click)="goBack()">←</button>
   <h2>Book Information</h2>
 
-  <div *ngIf="book$ | async as book">
+  <div *ngIf="book$ | async as book; else getBookInfo">
     <app-book-info [book]="book"></app-book-info>
   </div>
 
-  <div *ngIf="bookInfo as book">
-    <app-book-info [book]="book"></app-book-info>
-  </div>
+  <ng-template #getBookInfo>
+    <div *ngIf="bookInfo as book; else noInfo">
+      <app-book-info [book]="book"></app-book-info>
+    </div>
+  </ng-template>
+
+  <ng-template #noInfo>waiting...</ng-template>
 </div>
