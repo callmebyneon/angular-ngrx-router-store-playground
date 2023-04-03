@@ -10,6 +10,8 @@ import { ListComponent } from './list/list.component';
 import { BookComponent } from './book/book.component';
 import { bookReducer } from './book/book.reducer';
 import { BookInfoComponent } from './book-info/book-info.component';
+import { EffectsModule } from '@ngrx/effects';
+import { RouterEffects } from './router.effects';
 
 @NgModule({
   imports: [
@@ -19,6 +21,7 @@ import { BookInfoComponent } from './book-info/book-info.component';
       books: bookReducer,
       router: routerReducer,
     }),
+    EffectsModule.forRoot(RouterEffects),
     AppRoutingModule,
     StoreRouterConnectingModule.forRoot(),
     HttpClientModule,
